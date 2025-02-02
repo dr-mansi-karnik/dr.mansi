@@ -159,7 +159,7 @@
             <div class="image-container">
                 <img src="images/gallery/image-5.jpg" alt="Physiotherapy Treatment">
             </div>
-        </div>
+        </div>        
 
         <section class="gallery">
             <div class="container mt-4">
@@ -302,7 +302,7 @@
 
                         <h2 class="text-center mb-lg-3 mb-2">Book an appointment</h2>
 
-                        <form role="form" action="#booking" method="post">
+                        <form role="form" id="bookingForm" onsubmit="sendEmail(event)">
                             <div class="col-12">
                                 <input type="text" name="name" id="name" class="form-control" placeholder="Full name"
                                     required>
@@ -314,13 +314,8 @@
                             </div>
 
                             <div class="col-12">
-                                <input type="telephone" name="phone" id="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-                                    class="form-control" placeholder="Phone: 123-456-7890">
-                            </div>
-
-                            <div class="col-12">
-                                <input type="date" name="date" id="date" value="" class="form-control">
-
+                                <input type="text" name="Subject" id="subject" class="form-control" placeholder="Subject"
+                                    required>
                             </div>
 
                             <div class="col-12">
@@ -397,6 +392,20 @@
     </footer>
 
     <!-- JAVASCRIPT FILES -->
+    <script>
+        function sendEmail(event) {
+            event.preventDefault(); // Prevent form submission
+    
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let subject = document.getElementById("subject").value;
+            let message = document.getElementById("message").value;
+    
+            let mailtoLink = `mailto:rohitranjan1612@gmail.com?subject=${encodeURIComponent(subject)}&body=Name: ${encodeURIComponent(name)}%0D%0AEmail: ${encodeURIComponent(email)}%0D%0A%0D%0A${encodeURIComponent(message)}`;
+            
+            window.location.href = mailtoLink;
+        }
+    </script>
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>

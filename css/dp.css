@@ -697,9 +697,8 @@ strong {
 
 .booking-form .form-control {
   background: transparent;
-  border-radius: 0;
-  border: 0;
-  border-bottom: 1px solid var(--border-color);
+  border: none;
+  border-bottom: 1px solid black;
   color: #6c757d;
   font-weight: var(--font-weight-normal);
   padding-top: 12px;
@@ -970,3 +969,112 @@ strong {
   height: 100%;
   object-fit: cover;
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container-sub {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+  }
+
+  .content-black, .image-container {
+    width: 100%;
+    padding: 30px;
+    text-align: center;
+  }
+
+  /* .image-container img {
+    height: auto;
+    max-height: 400px;
+  } */
+
+  .btn {
+    font-size: 1.2rem;
+    padding: 12px 25px;
+  }
+
+  /* .booking-form {
+    width: 100%;
+  } */
+
+  /* .btn-primary {
+    font-size: 1.2rem;
+  } */
+
+
+
+
+  /* .container-sub {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+  } */
+
+  .content {
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .booking-form {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .form-group {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .form-control {
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+    padding: 12px;
+    font-size: 1rem;
+  }
+
+  .form-btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .btn-primary {
+    width: 100%;
+    max-width: 400px;
+    padding: 14px;
+    font-size: 1rem;
+  }
+
+  .image-container {
+    width: 100%;
+    text-align: center;
+  }
+
+  .image-container img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+  }
+
+}
+
+@media (max-width: 480px) {
+  .content-black {
+    padding: 20px;
+  }
+  .content {
+    padding: 10px;
+  }
+
+  .btn {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+}
+
