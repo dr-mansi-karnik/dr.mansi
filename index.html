@@ -55,10 +55,6 @@
                             <a class="nav-link" href="#about">About</a>
                         </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="#timeline">Timeline</a>
-                        </li>
-
                         <a class="navbar-brand d-none d-lg-block" href="index.html">
                             Dr. Mansi Karnik
                             <strong class="d-block">Consultant Physiotherapist</strong>
@@ -70,10 +66,6 @@
 
                         <li class="nav-item">
                             <a class="nav-link" href="#booking">Booking</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="#contact">Contact</a>
                         </li>
                     </ul>
                 </div>
@@ -167,7 +159,7 @@
             <div class="image-container">
                 <img src="images/gallery/image-5.jpg" alt="Physiotherapy Treatment">
             </div>
-        </div>
+        </div>        
 
         <section class="gallery">
             <div class="container mt-4">
@@ -310,7 +302,7 @@
 
                         <h2 class="text-center mb-lg-3 mb-2">Book an appointment</h2>
 
-                        <form role="form" action="#booking" method="post">
+                        <form role="form" id="bookingForm" onsubmit="sendEmail(event)">
                             <div class="col-12">
                                 <input type="text" name="name" id="name" class="form-control" placeholder="Full name"
                                     required>
@@ -322,13 +314,8 @@
                             </div>
 
                             <div class="col-12">
-                                <input type="telephone" name="phone" id="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-                                    class="form-control" placeholder="Phone: 123-456-7890">
-                            </div>
-
-                            <div class="col-12">
-                                <input type="date" name="date" id="date" value="" class="form-control">
-
+                                <input type="text" name="Subject" id="subject" class="form-control" placeholder="Subject"
+                                    required>
                             </div>
 
                             <div class="col-12">
@@ -361,31 +348,26 @@
 
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item d-flex">
+                            Monday, Tuesday - Saturday
+                            <span>11:00 AM - 9:00 PM</span>
+                        </li>
+                        <li class="list-group-item d-flex">
                             Sunday : Closed
                         </li>
 
-                        <li class="list-group-item d-flex">
-                            Monday, Tuesday - Firday
-                            <span>8:00 AM - 3:30 PM</span>
-                        </li>
-
-                        <li class="list-group-item d-flex">
-                            Saturday
-                            <span>10:30 AM - 5:30 PM</span>
-                        </li>
                     </ul>
                 </div>
 
-                <div class="col-lg-2 col-md-6 col-12 my-4 my-lg-0">
+                <div class="col-lg-2 col-md-12 col-12 my-4 my-lg-0">
                     <h5 class="mb-lg-4 mb-3">Clinic</h5>
 
-                    <p><a href="mailto:hello@company.co">hello@company.co</a>
+                    <p><a href="mailto:makarnik26@gmail.com">makarnik26@gmail.com</a>
                     <p>
 
-                    <p>123 Digital Art Street, San Diego, CA 92123</p>
+                    <p>Adarsh Jain Health Centre, Adarsh Nagar, Opp. Fire Bridged Station, Worli, Mumbai-25. Tell No. 022-24374899</p>
                 </div>
 
-                <div class="col-lg-3 col-md-6 col-12 ms-auto">
+                <!-- <div class="col-lg-3 col-md-6 col-12 ms-auto">
                     <h5 class="mb-lg-4 mb-3">Socials</h5>
 
                     <ul class="social-icon">
@@ -397,19 +379,33 @@
 
                         <li><a href="#" class="social-icon-link bi-youtube"></a></li>
                     </ul>
-                </div>
+                </div> -->
 
-                <div class="col-lg-3 col-12 ms-auto mt-4 mt-lg-0">
-                    <p class="copyright-text">Copyright © the terminal boy
-                        <br><br>Design: <a href="https://naemazam.com" target="_parent">naemazam</a>
-                    </p>
-                </div>
+           
 
+            </div>
+            <div class="col-lg-3 col-12 ms-auto mt-4 mt-lg-0">
+                <p class="copyright-text">Copyright © Dr Mansi Karnik
+                </p>
             </div>
             </section>
     </footer>
 
     <!-- JAVASCRIPT FILES -->
+    <script>
+        function sendEmail(event) {
+            event.preventDefault(); // Prevent form submission
+    
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let subject = document.getElementById("subject").value;
+            let message = document.getElementById("message").value;
+    
+            let mailtoLink = `mailto:makarnik26@gmail.com?subject=${encodeURIComponent(subject)}&body=Name: ${encodeURIComponent(name)}%0D%0AEmail: ${encodeURIComponent(email)}%0D%0A%0D%0A${encodeURIComponent(message)}`;
+            
+            window.location.href = mailtoLink;
+        }
+    </script>
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
